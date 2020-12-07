@@ -1,0 +1,31 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+int main()
+{
+    string FileName;
+    string h;
+    int n, i=0;
+    cout<<"Enter the FileName:";
+    cin>>FileName;
+    cout<<"Enter the Integer Number:";
+    cin>>n;
+    // opening the file in read mode
+    ifstream in(FileName.c_str());
+    if(! in.good())
+    {
+        cout<<"ERROR :Invalid FileName";
+        exit(0);
+    }
+    while((!in.eof())&&(i<n))
+    {
+        //in order to read file
+        getline(in,h);
+        cout<<h<<endl ;
+        i++;
+    }
+
+    if(i<n)
+    cout<<"Entire file is displayed"<<endl ;
+
+}
